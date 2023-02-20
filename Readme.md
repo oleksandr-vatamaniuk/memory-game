@@ -23,7 +23,7 @@ To play the game, click on a card to reveal the hidden image. Then, click on ano
 
 The game ends when all the matching pairs of cards have been found.
 ### Customization
-The game can be customized by editing the CSS and JavaScript files. For example, you can change the images used on the cards, adjust the size of the grid, or change the scoring system.
+The game can be customized by editing index file. For example, you can change the images used on the cards, adjust the size of the grid, timelimit and etc.
 
 ### License
 This game is licensed under the MIT License. See the LICENSE file for details.

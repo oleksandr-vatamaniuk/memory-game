@@ -35,6 +35,7 @@ export default class Memory {
 		this._board = this.interface.createBoard(gameArray, this.width, this.height)
 		const timer = this.interface.createTimer(this.timeLimit)
 
+		// Answers
 		console.log(gameArray);
 
 		this.attachListeners(this._board)
