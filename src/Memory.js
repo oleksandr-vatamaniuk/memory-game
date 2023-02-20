@@ -71,7 +71,6 @@ export default class Memory {
 	gameOver(){
 		clearInterval(this.gameState.interval)
 		this.removeListeners(this._board)
-		console.log('Game Over')
 		this.gameOverCb()
 	}
 
