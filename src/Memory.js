@@ -9,9 +9,11 @@ export default class Memory {
 								rows = 4,
 								columns = 4,
 								timeLimit = 60,
+								winCb = (time) => {},
+								gameOverCb = () => {},
 							}) {
 
-		Object.assign(this, {root, width, height, rows, columns, timeLimit})
+		Object.assign(this, {root, width, height, rows, columns, timeLimit, winCb, gameOverCb})
 		this.interface = new Interface({ width, height})
 		this.core = new Core({rows, columns})
 
@@ -28,7 +30,7 @@ export default class Memory {
 		}
 	}
 
-	startGame(){
+	startGame(cb = () => {}){
 		const gameArray = this.core.createGameElements()
 		this._board = this.interface.createBoard(gameArray, this.width, this.height)
 		const timer = this.interface.createTimer(this.timeLimit)
@@ -42,9 +44,10 @@ export default class Memory {
 
 		this.gameState.gameStarted = true;
 		this.startTimer(timer, this.timeLimit)
+		cb()
 	}
 
-	restartGame(){
+	restartGame(cb = () => {}){
 		clearInterval(this.gameState.interval)
 		this.gameState = {...this.gameState,
 			countDown: this.timeLimit,
@@ -60,17 +63,20 @@ export default class Memory {
 		this.root.innerHTML = '';
 
 		this.startGame()
+		cb()
 	}
 
 	gameOver(){
 		clearInterval(this.gameState.interval)
+		this.removeListeners(this._board)
 		console.log('Game Over')
+		this.gameOverCb()
 	}
 
 	winGame(){
 		clearInterval(this.gameState.interval)
 		this.gameState.interval = null
-		console.log('You win!!! Time spent', this.timeLimit - this.gameState.countDown)
+		this.winCb(this.timeLimit - this.gameState.countDown)
 	}
 
 	startTimer(timer){

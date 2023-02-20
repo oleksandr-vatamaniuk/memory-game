@@ -7,7 +7,7 @@ export default class Interface {
 
 	createTimer(initValue = 0){
 		return Object.assign(document.createElement('div'),
-			{ id: 'timer', innerText: 'Time Left: ' + initValue},
+			{ id: 'timer', innerText: 'TIMER: ' + initValue},
 		)
 	}
 

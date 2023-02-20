@@ -69,6 +69,10 @@ h1 {
   background-color: #FC7300;
 }
 
+.btn:disabled{
+  opacity: .6;
+}
+
 #board,
 .board{
   background-color: #006385;
