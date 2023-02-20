@@ -1,8 +1,8 @@
 export default class Core {
-	constructor({rows, columns}) {
-		Object.assign(this, {rows, columns})
+	constructor({rows, columns, assets}) {
+		Object.assign(this, {rows, columns, assets})
 		this.matchMap = {}
-		this.cards = ['🥔', '🍒', '🥑', '🌽', '🥕', '🍇', '🍉', '🍌', '🥭', '🍍']
+		this.cards = [...this.assets]
 	}
 
 	createGameElements(rows = this.rows, columns = this.columns){

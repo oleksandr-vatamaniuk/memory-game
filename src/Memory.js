@@ -11,11 +11,12 @@ export default class Memory {
 								timeLimit = 60,
 								winCb = (time) => {},
 								gameOverCb = () => {},
+								assets = ['🥔', '🍒', '🥑', '🌽', '🥕', '🍇', '🍉', '🍌', '🥭', '🍍']
 							}) {
 
-		Object.assign(this, {root, width, height, rows, columns, timeLimit, winCb, gameOverCb})
+		Object.assign(this, {root, width, height, rows, columns, timeLimit, winCb, gameOverCb, assets})
 		this.interface = new Interface({ width, height})
-		this.core = new Core({rows, columns})
+		this.core = new Core({rows, columns, assets})
 
 		this._listeners = {}
 		this._board = null;

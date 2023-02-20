@@ -12,6 +12,9 @@ const memory = new Memory({
 	rows: 4, // max value is 4, supported sizes 4x4, 2x2, 4x2 , 2x3
 	columns: 4,
 	timeLimit: 60, // seconds,
+	// assets: ['😀', '🌞', '🐶', '🌸', '🍕', '🎉', '🚀', '🎨', '🍩', '🐬'],
+	assets:	['👋', '🌸', '🎂', '🎉', '🌈', '🍕', '🐶', '🎵', '📚', '🚀'],
+	// assets: ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j'],
 	winCb: (time) => {
 		state.innerText = `You win!!! Your time is ${time} sec`
 	},
