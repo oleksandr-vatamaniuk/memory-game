@@ -24,8 +24,9 @@ export default class Interface {
 		let cardIndex = 0
 
 		board.innerHTML = array.map((row) => {
-			const cardWidth = (width / array.length) - this.MARGIN * 2;
-			const cardHeight = (height / row.length) - this.MARGIN * 2;
+			const cardWidth = (width / row.length) - this.MARGIN * 2;
+			const cardHeight = (height / array.length) - this.MARGIN * 2;
+
 			return `<div class="row">${
 				row.map((col) => {
 					return `<div class="card" style="width: ${cardWidth}px; height: ${cardHeight}px;" data-index="i_${cardIndex++}">

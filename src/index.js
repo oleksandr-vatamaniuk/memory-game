@@ -8,9 +8,9 @@ const state = document.getElementById('state')
 const memory = new Memory({
 	root: document.getElementById('root'),
 	width: 500, // px
-	height:500, // px
+	height: 500, // px
 	rows: 4, // max value is 4, supported sizes 4x4, 2x2, 4x2 , 2x3
-	columns: 4,
+	columns: 2,
 	timeLimit: 60, // seconds,
 	// assets: ['😀', '🌞', '🐶', '🌸', '🍕', '🎉', '🚀', '🎨', '🍩', '🐬'],
 	assets:	['👋', '🌸', '🎂', '🎉', '🌈', '🍕', '🐶', '🎵', '📚', '🚀'],
